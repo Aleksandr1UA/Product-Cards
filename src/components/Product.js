@@ -10,9 +10,9 @@ function Product({product}) {
                         <Card.Text className='text-center'>{product.brand} {product.model}</Card.Text>
                         <Card.Text className="text-center">{product.description}</Card.Text>
                     </Card.Body>
-                    <footer>
+                    <div>
                         <Button variant="primary">Buy</Button>
-                    </footer>
+                    </div>
                 </Card>
             </Col>
 }
