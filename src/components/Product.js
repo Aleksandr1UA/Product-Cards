@@ -5,10 +5,13 @@ function Product({product}) {
                 <Card className="p-3 h-100" border="success">
                     <Card.Img variant="top" src={product.img} />
                     <Card.Body>
-                        <Card.Title className="text-center">{product.price} грн</Card.Title>
+                        <Card.Title className="text-center text-danger">{product.price} грн</Card.Title>
+                        <Card.Text className='text-center'>{product.brand} {product.model}</Card.Text>
                         <Card.Text className="text-center">{product.description}</Card.Text>
-                        <Button variant="primary">Buy</Button>
                     </Card.Body>
+                    <footer>
+                        <Button variant="primary">Buy</Button>
+                    </footer>
                 </Card>
             </Col>
 }
