@@ -1,4 +1,5 @@
 import Product from './Product';
+import {Row} from 'react-bootstrap';
 
 function Products() {
     const products = [
@@ -83,7 +84,7 @@ function Products() {
             price: 17999
         }];
 
-    return products.map(product => <Product key={product.id} product={product} /> );   
+    return <Row>{products.map(product => <Product key={product.id} product={product} /> )}</Row>   
 }
 
 export default Products;

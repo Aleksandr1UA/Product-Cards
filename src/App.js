@@ -1,15 +1,11 @@
-import { Container, Row } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import './App.css';
 import Products from './components/Products';
 
 function App() {
-  return <Container className='py-4'>
-            <Row>
-              <Products />
-            </Row>
-  </Container>
-    
-
+  return <Container className='py-4'>    
+              <Products />      
+        </Container>
 }
 
 export default App;
