@@ -1,4 +1,4 @@
-import {Col, Card, Button} from 'react-bootstrap';
+import Product from './Product';
 
 function Products() {
     const products = [
@@ -63,18 +63,7 @@ function Products() {
             price: 17999
         }];
 
-    return products.map(product => {
-        return  <Col xs={6} md={4} className="my-2" key={product.id}>  
-                    <Card className="p-3 h-100" border="success">
-                        <Card.Img variant="top" src={product.img} />
-                        <Card.Body>
-                            <Card.Title className="text-center">{product.price} грн</Card.Title>
-                            <Card.Text className="text-center">{product.description}</Card.Text>
-                            <Button variant="primary">Buy</Button>
-                        </Card.Body>
-                    </Card>
-                </Col> 
-    });   
+    return products.map(product => <Product key={product.id} product={product} /> );   
 }
 
 export default Products;
