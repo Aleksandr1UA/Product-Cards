@@ -2,10 +2,13 @@ import { useEffect, useState } from 'react';
 import Product from './Product';
 import {Row} from 'react-bootstrap';
 import Cart from './Cart';
+import SearchInCountries from './SearchInProducts';
 
 function Products() {
 
     const [products, setProducts] = useState([]);
+    const [searchValue, setSearchValue] = useState('');
+    const [filteredProducts, setFilteredProducts] = useState([]);
     
     useEffect(() => {
         setProducts(
@@ -111,8 +114,17 @@ function Products() {
             addtocart: product.id === id ? false : product.addtocart })))
     }
 
+    function search(e) {
+        let value = e.target.value.toLowerCase();
+        setSearchValue(value);
+        setFilteredProducts(products.filter(product => product.brand.toLowerCase().includes(value) ||
+                product.model.toLowerCase().includes(value)))
+    }
+
     return <> 
-        <Row>{products.map(product => <Product key={product.id} 
+        <SearchInCountries search={search} />
+        {searchValue && !filteredProducts.length ? <div className='text-center'>Not Found</div> : ''}
+        <Row>{(searchValue ? filteredProducts : products).map(product => <Product key={product.id} 
                                                 product={product} 
                                                 addToCart={addToCart} 
                                                 removeFromCart={removeFromCart}/>)}
