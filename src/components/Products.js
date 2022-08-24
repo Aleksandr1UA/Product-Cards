@@ -115,7 +115,7 @@ function Products() {
     }
 
     function search(e) {
-        let value = e.target.value.toLowerCase();
+        let value = e.target.value.toLowerCase().trim();
         setSearchValue(value);
         setFilteredProducts(products.filter(product => product.brand.toLowerCase().includes(value) ||
                 product.model.toLowerCase().includes(value)))
