@@ -1,0 +1,12 @@
+.cart-block {
+    border: 1px solid grey;
+    border-radius: .5rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
