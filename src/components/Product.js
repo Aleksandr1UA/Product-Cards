@@ -2,7 +2,8 @@ import './Product.css';
 import {Col, Card, Button} from 'react-bootstrap';
 
 function Product({product, addToCart, removeFromCart}) {
-    
+
+
     return  <Col xs={6} md={4} className="my-2">
                 <Card className="p-3 h-100 product-card" border="success">
                     <Card.Img variant="top" src={product.img} />
@@ -13,8 +14,8 @@ function Product({product, addToCart, removeFromCart}) {
                     </Card.Body>
                     <div>
                         { product.addtocart ?
-                            <Button variant="danger" onClick={() => removeFromCart(product.id)}>Remove</Button> :
-                            <Button variant="primary" onClick={() => addToCart(product.id)}>Add</Button>
+                            <Button variant="danger" onClick={() => {removeFromCart(product.id)}}>Remove</Button> :
+                            <Button variant="primary" onClick={() => {addToCart(product.id)}}>Add</Button>
                         }
                     </div>
                 </Card>

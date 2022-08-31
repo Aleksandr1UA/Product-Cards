@@ -1,0 +1,9 @@
+.profile-form-email, .profile-form-password {
+    width: 10rem;
+}
+
+.form-check-label {
+    vertical-align: text-bottom;
+    font-size: 0.8rem;
+    color: brown;
+}

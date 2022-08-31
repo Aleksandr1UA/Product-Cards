@@ -1,0 +1,12 @@
+.close-btn {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: grey;
+}
+
+.close-btn:hover {
+    color: black;
+}

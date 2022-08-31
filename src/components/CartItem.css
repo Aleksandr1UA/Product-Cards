@@ -1,0 +1,20 @@
+.form-input {
+    border: 1px solid #c6c6c6;
+    border-radius: .3rem;
+}
+
+.form-input[value] {
+    text-align: center;
+}
+
+.input-btn {
+    cursor: pointer;
+    font-weight: bolder;
+    color: red;
+    border: none;
+    background: none;
+}
+
+.input-btn:disabled {
+    color: grey;
+}
