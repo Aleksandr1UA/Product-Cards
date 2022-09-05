@@ -120,13 +120,17 @@ function Products() {
 
     const addToCart = id => {
         setProducts(products.map(product => ({...product, addtocart: product.id === id ? true : product.addtocart })))
-        setAlertMessage(`Product add to cart`);
+
+        const productName = products.filter(product => product.id === id).map(el => `${el.brand} ${el.model}`)[0];
+        setAlertMessage({text: `Product ${productName} added to cart`});
     }
 
     const removeFromCart = id => {
         setProducts(products.map(product => ({...product, 
             addtocart: product.id === id ? false : product.addtocart })))
-        setAlertMessage('Product remove from cart');
+        
+        const productName = products.filter(product => product.id === id).map(el => `${el.brand} ${el.model}`)[0];
+        setAlertMessage({text: `Product ${productName} removed from cart`, variant: 'danger'});
     }
 
     const search = e => {
