@@ -10,6 +10,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AboutUs from './components/static/AboutUs';
 import Contacts from './components/static/Contacts';
 import Header from './components/Header';
+import NotFoundPage from './components/static/NotFoundPage';
+import SingleProduct from './components/SingleProduct';
+
 
 function App() {
   const [theme, setTheme] = useState('bg-light');
@@ -28,11 +31,12 @@ function App() {
             <Route path='/about-us' element={<AboutUs />} />
             <Route path='/contacts' element={<Contacts />} />
             <Route path='/profile' element={<Profile setProfile={setProfile} profile={profile} />} />
-            <Route path='/' element={<>
-              <Products />
-              <AlertMessage messageObject={alertMessage} />
-            </>} />
+            <Route path='/products' element={<Products />}>  
+            </Route>
+            <Route path='/products/:productId' element={<SingleProduct /> }/>
+            <Route path='*' element={<NotFoundPage />} /> 
           </Routes>
+          <AlertMessage messageObject={alertMessage} />
         </BrowserRouter>
         </ThemeContext.Provider> 
         </ProfileContext.Provider>    

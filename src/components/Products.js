@@ -4,6 +4,7 @@ import {Row} from 'react-bootstrap';
 import Cart from './Cart';
 import SearchInProducts from './SearchInProducts';
 import ThemeContext from '../context/ThemeContext';
+import { Outlet } from 'react-router-dom';
 
 function Products() {
     const {setAlertMessage} = useContext(ThemeContext);
@@ -150,11 +151,13 @@ function Products() {
             count: product.id === id ? product.count - 1 : product.count })))
     }
 
-    return <> 
+    return <>
+     
         <div>
             <SearchInProducts search={search} />
             {searchValue && !filteredProducts.length ? <div className='text-center'>Not Found</div> : ''}
         </div>
+        
         <Row>{(searchValue ? filteredProducts : products).map(product => <Product key={product.id} 
                                                 product={product} 
                                                 addToCart={addToCart} 
